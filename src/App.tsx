@@ -1,19 +1,11 @@
-import ListGroup from './components/ListGroup';
+import Button from './components/Button';
 
 const App = () => {
-  let items = ['New York', 'Stockholm', 'Moscow', 'Istanbul', 'Madrid'];
-
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  };
-
   return (
     <>
-      <ListGroup
-        items={items}
-        heading='Cities'
-        onSelectItem={handleSelectItem}
-      />
+      <Button color='primary' onClick={() => console.log('Clicked')}>
+        My Button
+      </Button>
     </>
   );
 };
