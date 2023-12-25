@@ -8,10 +8,15 @@ const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
 
   const [expenses, setExpenses] = useState([
-    { id: 1, description: 'aaa', amount: 10, category: 'Utilities' },
-    { id: 2, description: 'fff', amount: 30, category: 'Groceries' },
-    { id: 3, description: 'eee', amount: 510, category: 'Utilities' },
-    { id: 4, description: 'ggg', amount: 140, category: 'Entertainment' },
+    {
+      id: 1,
+      description: 'Coffee for 2',
+      amount: 40,
+      category: 'Entertainment',
+    },
+    { id: 2, description: 'Movie', amount: 440, category: 'Entertainment' },
+    { id: 3, description: 'Month Rent', amount: 9510, category: 'Utilities' },
+    { id: 4, description: 'Milk', amount: 24, category: 'Groceries' },
   ]);
 
   const visibleExpenses = selectedCategory
@@ -19,7 +24,7 @@ const App = () => {
     : expenses;
 
   return (
-    <>
+    <div className='container'>
       <div className='mb-5'>
         <ExpenseForm
           onSubmit={(newExpense) =>
@@ -40,7 +45,7 @@ const App = () => {
         expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
       />
-    </>
+    </div>
   );
 };
 

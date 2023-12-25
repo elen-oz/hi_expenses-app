@@ -1,3 +1,5 @@
+import { formatNumber } from '../utils/utils';
+
 interface Expense {
   id: number;
   description: string;
@@ -26,7 +28,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
         {expenses.map((expense) => (
           <tr key={expense.id}>
             <td>{expense.description}</td>
-            <td>{expense.amount}</td>
+            <td>{formatNumber(expense.amount)}</td>
             <td>{expense.category}</td>
             <td>
               <button
@@ -40,13 +42,13 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
         ))}
       </tbody>
       <tfoot>
-        <tr>
+        <tr className='fw-bold'>
           <td>Total</td>
           <td>
-            {expenses
-              .reduce((acc, expense) => expense.amount + acc, 0)
-              .toFixed(2)}
-            SEK
+            {formatNumber(
+              expenses.reduce((acc, expense) => expense.amount + acc, 0)
+            )}
+            &thinsp;SEK
           </td>
           <td></td>
           <td></td>
