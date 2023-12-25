@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import categories from '../categories';
+import categories from '../utils/categories';
 
 const schema = z.object({
   description: z
@@ -54,7 +54,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
       </div>
       <div className='mb-3'>
         <label htmlFor='amount' className='form-label'>
-          Amount
+          Amount (SEK)
         </label>
         <input
           {...register('amount', { valueAsNumber: true })}

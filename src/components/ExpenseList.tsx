@@ -17,7 +17,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
       <thead>
         <tr>
           <th>Description</th>
-          <th>Amount</th>
+          <th>Amount (SEK)</th>
           <th>Category</th>
           <th></th>
         </tr>
