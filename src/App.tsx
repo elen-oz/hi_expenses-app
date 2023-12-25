@@ -14,7 +14,7 @@ const App = () => {
     : expenses;
 
   return (
-    <div className='container'>
+    <div className='container-sm custom-sm-container'>
       <h2 className='my-3 text-center'>Calculate Your Expenses</h2>
       <div className='mb-5'>
         <ExpenseForm

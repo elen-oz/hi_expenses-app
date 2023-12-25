@@ -1,0 +1,13 @@
+body {
+  background-color: #e2faeb;
+}
+.custom-sm-container {
+  padding: 15px;
+  background-color: #fff;
+}
+
+@media (min-width: 576px) {
+  .custom-sm-container {
+    max-width: 540px;
+  }
+}
