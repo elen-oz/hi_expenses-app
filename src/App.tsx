@@ -2,21 +2,12 @@ import { useState } from 'react';
 import ExpenseList from './components/ExpenseList';
 import ExpenseFilter from './components/ExpenseFilter';
 import ExpenseForm from './components/ExpenseForm';
+import listOfExpenses from './utils/expenses';
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  const [expenses, setExpenses] = useState([
-    {
-      id: 1,
-      description: 'Coffee for 2',
-      amount: 40,
-      category: 'Entertainment',
-    },
-    { id: 2, description: 'Movie', amount: 440, category: 'Entertainment' },
-    { id: 3, description: 'Month Rent', amount: 9510, category: 'Utilities' },
-    { id: 4, description: 'Milk', amount: 24, category: 'Groceries' },
-  ]);
+  const [expenses, setExpenses] = useState(listOfExpenses);
 
   const visibleExpenses = selectedCategory
     ? expenses.filter((e) => e.category === selectedCategory)
