@@ -15,6 +15,7 @@ const App = () => {
 
   return (
     <div className='container'>
+      <h2 className='my-3 text-center'>Calculate Your Expenses</h2>
       <div className='mb-5'>
         <ExpenseForm
           onSubmit={(newExpense) =>
